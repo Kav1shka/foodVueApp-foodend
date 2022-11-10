@@ -1,15 +1,17 @@
-<template>
-  <foodMenu/>
-  <NavBar/>
+<template> 
+<NavBar/>
+<foodMenu/>
+  
 </template>
 <script>
-import foodMenu from './';
 import NavBar from '../components/NavBar.vue';
+import foodMenu from '../components/menu/foodmenu.vue'
+
 
 export default {
   components:{
-    foodMenu,
-    NavBar
+    NavBar,
+    foodMenu
 }
 }
 </script>
