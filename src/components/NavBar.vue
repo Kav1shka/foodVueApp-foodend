@@ -3,12 +3,11 @@
     <div class="container flex flex-wrap items-center justify-between mx-auto">
       <a href="https://flowbite.com/" class="flex items-center">
         <img
-          src="https://flowbite.com/docs/images/logo.svg"
+          src="https://www.kdu.ac.lk/wp-content/uploads/2016/03/logo_kdu-2.png"
           class="h-6 mr-3 sm:h-9"
-          alt="Flowbite Logo"
+          alt="KDU Logo"
         />
-        <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"
-          >Flowbite</span
+        <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">KDU Cafeteria</span
         >
       </a>
       <button
@@ -49,22 +48,19 @@
             <a
               href="#"
               class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              >About</a
+              >Category</a
             >
           </li>
           <li>
             <a
               href="#"
               class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              >Services</a
+              >Cart</a
             >
           </li>
-          <li>
-            <a
-              href="#"
-              class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              >Pricing</a
-            >
+          <li><router-link :to="{name:'About'}">
+           About
+          </router-link>
           </li>
           <li>
             <a

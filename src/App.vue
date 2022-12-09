@@ -1,22 +1,23 @@
 <template>
-  <!-- <Menu/> -->
+  <Menu />
   <!-- <cart/> -->
-
-  <NavBar />
+<!-- <team/> -->
   <!-- <Login/> -->
 </template>
 
 <script>
 // import Login from './views/login.vue'
-// import Menu from './views/menu.vue'
+import Menu from "./views/menu.vue";
 // import cart from './components/cart.vue'
 
-import NavBar from "./components/NavBar.vue";
+// import team from "./components/team.vue";
 export default {
   components: {
-    //  Menu
+    Menu,
+    // team
+
+
     //  cart
-    NavBar,
     // Login
   },
 };
