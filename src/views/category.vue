@@ -1,19 +1,24 @@
 <template> 
-    <NavBar/>
-    <foodMenu/>
-      
-    </template>
+ <navbar/>
+  <category/>
+   
+
+</template>
+
     <script>
-    import NavBar from '../components/NavBar.vue';
-    import foodMenu from '../components/menu/foodmenu.vue'
+    import navbar from '../components/NavBar.vue'
+   import category from '../components/menu/foodCategory.vue'
+
+  export default{
+
+  components:{
+    navbar,
+    category
     
-    
-    export default {
-      components:{
-        NavBar,
-        foodMenu
-    }
-    }
-    </script>
+
+  
+  }
+}
+</script>
     <style>
     </style>
