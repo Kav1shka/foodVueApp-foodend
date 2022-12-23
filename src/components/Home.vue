@@ -46,7 +46,10 @@
               <Router-link to="/category" class="inline-block rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-center font-medium text-white hover:bg-indigo-700">start
               </Routerlink>
             </p> -->
-          <Router-link to="/category" custom v-slot="{navigate}"> <button @click="navigate" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" >GO</button></Router-link>
+            <div>
+              <button @click="goToHome()" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" >GO</button>
+            </div>
+       
             </div>
           </div>
         </div>
@@ -54,4 +57,16 @@
     </div>
     
   </template>
-  
+  <script>
+
+  export default{
+
+    methods:{
+      goToHome(){
+        this.$router.push('../components/Home.vue');
+      },
+    },
+  };
+  </script>
+  <style>
+  </style>

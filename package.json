@@ -11,7 +11,7 @@
     "@popperjs/core": "^2.11.6",
     "@vue-hero-icons/outline": "^1.7.2",
     "@vue-hero-icons/solid": "^1.7.2",
-    "axios": "^1.1.2",
+    "axios": "^1.2.1",
     "bootstrap": "^5.2.1",
     "daisyui": "^2.31.0",
     "flowbite": "^1.5.3",
