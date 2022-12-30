@@ -127,3 +127,34 @@
 </div>
 
 </template>
+
+<script>
+import axios from "axios";
+export default {
+  data() {
+    return {
+      cartItems: [],
+      token: null,
+      totalCost: 0,
+    };
+  },
+  props: ["baseURL"],
+  methods: {
+    // fetch All items in cart
+    listCartItems() {
+      axios
+        .get(`${this.baseURL}cart/?token=${this.token}`)
+        .then((res) => {
+          const result = res.data;
+          this.cartItems = result.cartItems;
+          this.totalCost = result.totalCost;
+        })
+        .catch((err) => console.log("err", err));
+    },
+  },
+  mounted() {
+    this.token = localStorage.getItem("token");
+    this.listCartItems();
+  },
+};
+</script>

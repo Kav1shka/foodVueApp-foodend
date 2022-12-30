@@ -34,7 +34,7 @@
     </div>
   </template>
   
-  <script setup>
+  <!-- <script setup> 
   const products = [
     {
       id: 1,
@@ -62,4 +62,22 @@
     }
    
   ]
-  </script>
+  </script> -->
+
+  <script>
+    export default {
+        data() {
+            return {
+                product: {},
+                category: {}
+            }
+        },
+        props: ["baseURL", "products", "categories"],
+        mounted() {
+            this.id = this.$route.params.id;
+            this.product = this.products.find((product) => product.id == this.id)
+            this.category = this.categories.find(category =>
+                category.id == this.product.categoryId)
+        }
+    }
+</script>

@@ -57,16 +57,24 @@
     </div>
     
   </template>
-  <script>
 
-  export default{
+<script>
+export default{
+  methods:{
+    goToHome(){
+      this.$router.push('/category')
+    },
+  },
+};
+</script>
 
+
+
+ <!-- export default{
     methods:{
       goToHome(){
-        this.$router.push('../components/Home.vue');
-      },
-    },
-  };
-  </script>
-  <style>
-  </style>
+            this.$router.push('/');
+            console.log("sds");
+        },
+    },    
+  }; -->

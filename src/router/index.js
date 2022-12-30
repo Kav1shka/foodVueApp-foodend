@@ -51,8 +51,7 @@ const routes=[
         path:'/cart',
         name:'cart',
         component:cart,
-    },
- 
+    }
 ]
 // import Home from '../views/Home.vue'
 

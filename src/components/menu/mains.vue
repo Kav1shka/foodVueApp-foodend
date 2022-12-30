@@ -30,7 +30,7 @@
             Buy now
           </button>
 
-        </div>
+        </div> 
             <div>
               <h3 class="text-sm text-gray-700">
                 <a :href="product.href">
@@ -49,6 +49,10 @@
 </template>
 
 <script setup>
+import axios from 'axios';
+const state = {
+  productItems: [] 
+}
 const products = [
   {
     id: 1,
