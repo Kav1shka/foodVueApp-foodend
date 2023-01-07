@@ -31,7 +31,7 @@
               <div class="flex items-start justify-between">
                 <h2 class="text-lg font-medium text-gray-900" id="slide-over-title">Shopping cart</h2>
                 <div class="ml-3 flex h-7 items-center">
-                  <button type="button" class="-m-2 p-2 text-gray-400 hover:text-gray-500">
+                  <button type="button" class="-m-2 p-2 text-gray-400 hover:text-gray-500"  @click="hasHistory() ? $router.go(-1) : $router.push('/')">
                     <span class="sr-only">Close panel</span>
                     <!-- Heroicon name: outline/x-mark -->
                     <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -40,6 +40,7 @@
                   </button>
                 </div>
               </div>
+              
 
               <div class="mt-8">
                 <div class="flow-root">
@@ -129,32 +130,57 @@
 </template>
 
 <script>
-import axios from "axios";
+// import axios from "axios";
+// export default {
+//   data() {
+//     return {
+//       cartItems: [],
+//       token: null,
+//       totalCost: 0,
+//     };
+//   },
+//   props: ["baseURL"],
+//   methods: {
+//     // fetch All items in cart
+//     listCartItems() {
+//       axios
+//         .get(`${this.baseURL}cart/?token=${this.token}`)
+//         .then((res) => {
+//           const result = res.data;
+//           this.cartItems = result.cartItems;
+//           this.totalCost = result.totalCost;
+//         })
+//         .catch((err) => console.log("err", err));
+//     },
+//   },
+//   mounted() {
+//     this.token = localStorage.getItem("token");
+//     this.listCartItems();
+//   },
+// };
+// import { mapGetters, mapActions } from "vuex";
+// import CartListItem from "./cart.vue";
+
 export default {
-  data() {
-    return {
-      cartItems: [],
-      token: null,
-      totalCost: 0,
-    };
-  },
-  props: ["baseURL"],
-  methods: {
-    // fetch All items in cart
-    listCartItems() {
-      axios
-        .get(`${this.baseURL}cart/?token=${this.token}`)
-        .then((res) => {
-          const result = res.data;
-          this.cartItems = result.cartItems;
-          this.totalCost = result.totalCost;
-        })
-        .catch((err) => console.log("err", err));
-    },
-  },
-  mounted() {
-    this.token = localStorage.getItem("token");
-    this.listCartItems();
-  },
-};
+   methods: {
+    hasHistory () { return window.history.length > 2 }
+   }
+  }
+//    name: "CartList",
+//    components: {
+//     CartListItem
+//   },
+
+//   computed: {
+//     ...mapGetters(["cartItems", "cartTotal", "cartQuantity"]),
+//   },
+
+//   created() {
+//     this.$store.dispatch("getCartItems");
+//   },
+
+//   methods: {
+//     ...mapActions(["removeAllCartItems"]),
+//   }
+//  }
 </script>
