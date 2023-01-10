@@ -5,10 +5,12 @@
 import { createStore } from 'vuex'
 import product from'./products.module';
 import cart from './Cart.module';
+import User from './user.module';
 
 export default createStore({
   modules: {
     product,
-    cart
+    cart,
+    User
   }
 })

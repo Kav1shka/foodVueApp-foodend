@@ -7,7 +7,10 @@ import mains from "../components/menu/mains.vue"
 import drinks from "../components/menu/drinks.vue"
 import pastries from "../components/menu/pastries.vue"
 import dessert from "../components/menu/dessert.vue"
-import cart from "../components/cart.vue";
+import cart from "../components/cart.vue"
+import SignIn from "../components/login.vue"
+import SignUp from "../components/register.vue";
+import store from "../store"
 
 
  
@@ -25,7 +28,19 @@ const routes=[
     {
         path:'/category',
         name:'category',
-        component:category
+        component:category,
+        beforeEnter: (to, from, next) => {
+            if (store.state.isLoggedIn === false) {
+                next({path:'/SignIn',
+                query:{
+                        redirecFrom: to.fullPath
+                }
+            })
+            }
+            else{
+                next()
+            }
+        }
     },
     {
         path:'/mains',
@@ -51,6 +66,28 @@ const routes=[
         path:'/cart',
         name:'cart',
         component:cart,
+        beforeEnter: (to, from, next) => {
+            if (store.state.isLoggedIn === false) {
+                next({path:'/SignIn',
+                query:{
+                        redirecFrom: to.fullPath
+                }
+            })
+            }
+            else{
+                next()
+            }
+        }
+    },
+    {
+        path:'/SignIn',
+        name:'SignIn',
+        component:SignIn,
+    },
+    {
+        path:'/SignUp',
+        name:'SignUp',
+        component:SignUp,
     }
 ]
 
