@@ -19,7 +19,7 @@ const actions = {
     axios.get('http://localhost:8000/cart/get_cart_items').then((response) => {
       commit('UPDATE_CART_ITEMS', response.data)
     });
-  },
+  }, 
   addCartItem ({ commit }, cartItem) {
     axios.post('http://localhost:8000/cart/add_cart_item', cartItem).then((response) => {
       commit('UPDATE_CART_ITEMS', response.data)
