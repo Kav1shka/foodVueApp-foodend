@@ -1,24 +1,64 @@
+<template>
+  <body class="overflow-y-hidden pb-16">
+      <div class="flex justify-center items-center">
+          <div class="xl:mx-auto xl:container py-12 px-4 sm:px-6 xl:px-20 xl:px-0 w-full">
+              <div class="flex flex-col jusitfy-center items-center space-y-10">
+                  <div class="flex flex-col justify-center items-center space-y-2">
+                      <h1 class="text-3xl xl:text-4xl font-semibold leading-7 xl:leading-9 text-white">Shop By Category</h1>
+                  </div>
+                  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-x-4 md:gap-x-8 w-full">
+                      <div class="relative group flex justify-center items-center h-full w-full">
+                          <img class="object-center object-cover h-full w-full" src="https://thumbs.dreamstime.com/b/indian-sri-lankan-curry-rice-dal-other-combination-south-asian-food-193364875.jpg" alt="girl-image" />
+                          <button class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 bottom-4 z-10 absolute text-base font-medium leading-none text-gray-800 py-3 w-36 bg-white">Maines</button>
+                          <div class="absolute opacity-0 group-hover:opacity-100 transition duration-500 bottom-3 py-6 z-0 px-20 w-36 bg-white bg-opacity-50"></div>
+                      </div>
 
-  <template>
-  <div class="bg-white">
-    <h2 class="text-2xl font-bold tracking-tight text-gray-900">Category</h2>
-    <div class="mx-auto grid max-w-2xl grid-cols-1  gap-y-16 gap-x-8 py-24 px-4 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8 group-hover:opacity-75">
-    
-      <div class="mx-auto grid max-w-2xl grid-cols-1 items-center gap-y-16 gap-x-8 py-24 px-4 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
-      <Router-link to="/mains">  <img src="https://d1ralsognjng37.cloudfront.net/38b3c437-0a86-4df1-b71a-021c3d8df04b.jpeg" alt="Walnut card tray with white powder coated steel divider and 3 punchout holes." class="rounded-lg bg-gray-100" /></Router-link>
-      <Router-link to="/pastry">  <img src="https://lankanrailwaycafe.com.au/wp-content/uploads/2022/07/short-eats1.jpg" alt="Top down view of walnut card tray with embedded magnets and card groove." class="rounded-lg bg-gray-100" /></Router-link>
+                      <div class="flex flex-col space-y-4 md:space-y-8 mt-4 md:mt-0">
+                          <div class="relative group flex justify-center items-center h-full w-full">
+                              <img class="object-center object-cover h-full w-full" src="https://i.ibb.co/SXZvYHs/irene-kredenets-DDqx-X0-7v-KE-unsplash-1.png" alt="shoe-image" />
+                              <button class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 bottom-4 z-10 absolute text-base font-medium leading-none text-gray-800 py-3 w-36 bg-white">Pastry</button>
+                              <div class="absolute opacity-0 group-hover:opacity-100 transition duration-500 bottom-3 py-6 z-0 px-20 w-36 bg-white bg-opacity-50"></div>
+                          </div>
+                          <div class="relative group flex justify-center items-center h-full w-full">
+                              <img class="object-center object-cover h-full w-full" src="https://steakout.ng/wp-content/uploads/2021/03/soft-drinks.jpg" alt="watch-image" />
+                              <button class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 bottom-4 z-10 absolute text-base font-medium leading-none text-gray-800 py-3 w-36 bg-white">Drinks</button>
+                              <div class="absolute opacity-0 group-hover:opacity-100 transition duration-500 bottom-3 py-6 z-0 px-20 w-36 bg-white bg-opacity-50"></div>
+                          </div>
+                      </div>
+
+                      <div class="relative group justify-center items-center h-full w-full hidden lg:flex">
+                          <img class="object-center object-cover h-full w-full" src="https://i.ibb.co/PTtRBLL/olive-tatiane-Im-Ez-F9-B91-Mk-unsplash-1.png" alt="girl-image" />
+                          <button class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 bottom-4 z-10 absolute text-base font-medium leading-none text-gray-800 py-3 w-36 bg-white">Dessert</button>
+                          <div class="absolute opacity-0 group-hover:opacity-100 transition duration-500 bottom-3 py-6 z-0 px-20 w-36 bg-white bg-opacity-50"></div>
+                      </div>
+                      <div class="relative group flex justify-center items-center h-full w-full mt-4 md:hidden md:mt-8 lg:hidden">
+                          <img class="object-center object-cover h-full w-full hidden md:block" src="https://i.ibb.co/6FjW19n/olive-tatiane-Im-Ez-F9-B91-Mk-unsplash-2.png" alt="girl-image" />
+                          <img class="object-center object-cover h-full w-full md:hidden" src="https://i.ibb.co/sQgHwHn/olive-tatiane-Im-Ez-F9-B91-Mk-unsplash-1.png" alt="olive-tatiane-Im-Ez-F9-B91-Mk-unsplash-2" />
+                          <button class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 bottom-4 z-10 absolute text-base font-medium leading-none text-gray-800 py-3 w-36 bg-white">Women</button>
+                          <div class="absolute opacity-0 group-hover:opacity-100 transition duration-500 bottom-3 py-6 z-0 px-20 w-36 bg-white bg-opacity-50"></div>
+                      </div>
+                  </div>
+                  <div class="relative group hidden md:flex justify-center items-center h-full w-full mt-4 md:mt-8 lg:hidden">
+                      <img class="object-center object-cover h-full w-full hidden md:block" src="https://i.ibb.co/6FjW19n/olive-tatiane-Im-Ez-F9-B91-Mk-unsplash-2.png" alt="girl-image" />
+                      <img class="object-center object-cover h-full w-full sm:hidden" src="https://i.ibb.co/sQgHwHn/olive-tatiane-Im-Ez-F9-B91-Mk-unsplash-1.png" alt="olive-tatiane-Im-Ez-F9-B91-Mk-unsplash-2" />
+                      <button class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 bottom-4 z-10 absolute text-base font-medium leading-none text-gray-800 py-3 w-36 bg-white">Women</button>
+                      <div class="absolute opacity-0 group-hover:opacity-100 transition duration-500 bottom-3 py-6 z-0 px-20 w-36 bg-white bg-opacity-50"></div>
+                  </div>
+              </div>
+          </div>
       </div>
-
-        <div class="mx-auto grid max-w-2xl grid-cols-1 items-center gap-y-16 gap-x-8 py-24 px-4 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
-          <Router-link to="/drinks">    <img src="https://i0.wp.com/www.reviewsrilanka.com/wp-content/uploads/2021/06/Elephant-House-min-1.jpg?resize=850%2C520&ssl=1" alt="Side of walnut card tray with card groove and recessed card area." class="rounded-lg bg-gray-100" /></Router-link>
-          <Router-link to="/dessert">  <img src="https://www.elephanthouse.lk/images/site-specific/ice-cream/product-main-image/cups/cups-main-image-new.png" alt="Walnut card tray filled with cards and card angled in dedicated groove." class="rounded-lg bg-gray-100" /></Router-link>
-        </div>
-    </div>
-  </div>
-  
+  </body>
 </template>
 
 <script>
-
+export default {
+  name: "component",
+  data() {
+      return {};
+  },
+};
 </script>
+
+<style>
+</style>
 
