@@ -11,6 +11,7 @@ import cart from "../components/cart.vue"
 import SignIn from "../components/login.vue"
 import SignUp from "../components/register.vue";
 import store from "../store"
+import Profile from '../components/profile.vue';
 
 
  
@@ -88,6 +89,11 @@ const routes=[
         path:'/SignUp',
         name:'SignUp',
         component:SignUp,
+    },
+    {
+        path:'/profile',
+        name:'profile',
+        component:Profile,
     }
 ]
 

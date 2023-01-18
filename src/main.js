@@ -3,6 +3,7 @@ import App from './App.vue'
 import './input.css'
 import router from './router';
 import store from "./store";
+import 'tw-elements';
 
  
 

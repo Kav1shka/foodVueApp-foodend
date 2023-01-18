@@ -3,17 +3,11 @@
     <div class="sm:flex sm:items-center sm:justify-between">
         <a href="https://flowbite.com/" class="flex items-center mb-4 sm:mb-0">
             <img src="https://www.kdu.ac.lk/wp-content/uploads/2016/03/logo_kdu-2.png" class="mr-3 h-8" alt="KDU Logo" />
-            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">ජෙනරාල් ශ්‍රිමත් ජෝන් කොතලාවල ආරක්ෂක විශ්ව විද්‍යාලය</span>
+            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"> </span>
         </a>
         <ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
             <li>
                 <a href="#" class="mr-4 hover:underline md:mr-6 ">About</a>
-            </li>
-            <li>
-                <a href="#" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
-            </li>
-            <li>
-                <a href="#" class="mr-4 hover:underline md:mr-6 ">Licensing</a>
             </li>
             <li>
                 <a href="#" class="hover:underline">Contact</a>

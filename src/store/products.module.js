@@ -34,7 +34,8 @@ const productModule = {
   state,
   mutations,
   actions,
-  getters
+  getters,
+  namespaced: true
 }
 
 export default productModule;

@@ -15,13 +15,16 @@ const mutations = {
    
 }
 const actions = {
-  getCartItems ({ commit }) {
+  getCartItems ({ commit },id) {
+    console.log(id)
     axios.get('http://localhost:8000/cart/get_cart_items').then((response) => {
-      commit('UPDATE_CART_ITEMS', response.data)
+      commit('UPDATE_CART_ITEMS', response.data);
+
     });
   }, 
-  addCartItem ({ commit }, cartItem) {
-    axios.post('http://localhost:8000/cart/add_cart_item', cartItem).then((response) => {
+  addCartItem ({ commit },id) {
+    console.log(id)
+    axios.post('http://localhost:8000/cart/add_cart_item', id).then((response) => {
       commit('UPDATE_CART_ITEMS', response.data)
     });
   },
@@ -52,7 +55,8 @@ const cartModule = {
   state,
   mutations,
   actions,
-  getters
+  getters,
+  namespaced: true
 }
 
 export default cartModule;

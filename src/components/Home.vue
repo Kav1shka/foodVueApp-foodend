@@ -54,11 +54,13 @@
           </div>
         </div>
       </div>
+      
     </div>
-    
+
   </template>
 
 <script>
+import * as mdb from 'mdb-ui-kit';
 export default{
   methods:{
     goToHome(){
@@ -70,11 +72,4 @@ export default{
 
 
 
- <!-- export default{
-    methods:{
-      goToHome(){
-            this.$router.push('/');
-            console.log("sds");
-        },
-    },    
-  }; -->
+ 

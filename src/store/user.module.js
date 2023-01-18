@@ -65,6 +65,7 @@ const userModule = {
     state,
     mutations,
     action,
+    namespaced: true
 }
 
 export default userModule;
