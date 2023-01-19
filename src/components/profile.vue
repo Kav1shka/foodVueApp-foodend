@@ -1,100 +1,64 @@
-<script>
-export default {};
-</script>
-
+<!-- This example requires Tailwind CSS v2.0+ -->
 <template>
-  <div class="h-full">
-    <div class="border-b-2 block md:flex">
-      <div class="w-full md:w-2/5 p-4 sm:p-6 lg:p-8 bg-white shadow-md">
-        <div class="flex justify-between">
-          <span class="text-xl font-semibold block">User Profile</span>
-          <button>
-            <div
-              class="-mt-2 text-md font-bold text-white bg-blue-700 rounded-full px-5 py-2 hover:bg-blue-800"
-            >
-              Edit
-            </div>
-          </button>
-        </div>
-
-        <span class="text-gray-600"
-          >This information is secret so be careful</span
+  <div class="bg-white container mx-auto sm:px-6 lg:px-8">
+    <br />
+    <div class="flex justify-center">
+      <span
+        class="inline-block lg:h-44 lg:w-44 md:h-24 md:w-24 sm sm:h-14 sm:w-14 overflow-hidden rounded-full bg-gray-100"
+      >
+        <svg
+          class="h-full w-full text-gray-300"
+          fill="currentColor"
+          viewBox="0 0 24 24"
         >
-        <div class="w-full p-8 mx-2 flex justify-center">
-          <img
-            id="showImage"
-            class="max-w-xs w-70 items-center border"
-            src="./images/free-user-icon-3294-thumb.png"
-            alt=""
+          <path
+            d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z"
           />
-        </div>
-      </div>
-
-      <div class="w-full md:w-3/5 p-8 bg-white lg:ml-4 shadow-md">
-        <span class="text-gray-600 pt-4 block opacity-70"
-          >Personal login information of your account</span
-        >
-        <div class="rounded shadow p-6">
-          <div class="pb-6">
-            <label for="name" class="font-semibold text-gray-700 block pb-1"
-              >Name</label
-            >
-            <div class="flex">
-              <input
-                disabled
-                id="username"
-                class="border-1 rounded-r px-4 py-2 w-full"
-                type="text"
-                value="Jane Name"
-              />
-            </div>
-          </div>
-          <div class="pb-4">
-            <label for="about" class="font-semibold text-gray-700 block pb-1"
-              >Email</label
-            >
-            <div class="flex">
-              <input
-                disabled
-                id="email"
-                class="border-1 rounded-r px-4 py-2 w-full"
-                type="email"
-                value="example@example.com"
-              />
-            </div>
-            <br />
-
-            <div class="pb-4">
-              <label for="about" class="font-semibold text-gray-700 block pb-1"
-                >KDU ID</label
-              >
-              <div class="flex">
-                <input
-                  disabled
-                  id="email"
-                  class="border-1 rounded-r px-4 py-2 w-full"
-                  type="email"
-                  value="KDU ID"
-                />
-              </div>
-            </div>
-            <div class="pb-4">
-              <label for="about" class="font-semibold text-gray-700 block pb-1"
-                >Phone number</label
-              >
-              <div class="flex">
-                <input
-                  disabled
-                  id="email"
-                  class="border-1 rounded-r px-4 py-2 w-full"
-                  type="email"
-                  value="+94########"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        </svg>
+      </span>
     </div>
+    <div>
+      <br />
+      <h3 class="text-lg font-medium leading-6 text-gray-900">
+        Applicant Information
+      </h3>
+      <p class="mt-1 max-w-2xl text-sm text-gray-500">
+        Personal details and application.
+      </p>
+    </div>
+    <div class="mt-5 border-t border-gray-200">
+      <dl class="sm:divide-y sm:divide-gray-200">
+        <div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
+          <dt class="text-sm font-medium text-gray-500">Full name</dt>
+          <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+            {{ Name }}
+          </dd>
+        </div>
+        <div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
+          <dt class="text-sm font-medium text-gray-500">Email address</dt>
+          <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+            {{ Email }}
+          </dd>
+        </div>
+        <div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
+          <dt class="text-sm font-medium text-gray-500">Phone number</dt>
+          <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+            {{ Phone }}
+          </dd>
+        </div>
+        <div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
+          <dt class="text-sm font-medium text-gray-500">KDU Reg number</dt>
+          <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+            {{ KDU_ID }}
+          </dd>
+        </div>
+      </dl>
+    </div>
+    <hr/>
+    <br/>
   </div>
 </template>
+
+<script setup>
+import { PaperClipIcon } from "@heroicons/vue/20/solid";
+</script>

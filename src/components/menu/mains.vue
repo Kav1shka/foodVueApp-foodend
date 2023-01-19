@@ -92,8 +92,8 @@ export default {
         });
     },
     addtocart(id) {
-      console.log(id)
-     this.$store.dispatch('cart/addCartItem',id);
+    console.log(id)
+     //store.dispatch('',id);
       //this.$router.push("/cart");
     },
   },

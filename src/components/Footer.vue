@@ -1,5 +1,5 @@
 <template>
-    <footer class="p-4 bg-white rounded-lg shadow md:px-6 md:py-8 dark:bg-gray-900">
+    <footer class="p-4 bg-gray-1000 rounded-lg shadow md:px-6 md:py-8 dark:bg-gray-900">
     <div class="sm:flex sm:items-center sm:justify-between">
         <a href="https://flowbite.com/" class="flex items-center mb-4 sm:mb-0">
             <img src="https://www.kdu.ac.lk/wp-content/uploads/2016/03/logo_kdu-2.png" class="mr-3 h-8" alt="KDU Logo" />

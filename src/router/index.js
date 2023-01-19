@@ -1,21 +1,22 @@
 
 import { createRouter,createWebHistory } from "vue-router";
 import team from "../components/team.vue";
-import category from "../views/category.vue"
+import category from "../components/menu/foodCategory.vue"
 import Home from "../components/Home.vue"
 import mains from "../components/menu/mains.vue"
 import drinks from "../components/menu/drinks.vue"
 import pastries from "../components/menu/pastries.vue"
 import dessert from "../components/menu/dessert.vue"
-import cart from "../components/cart.vue"
+import store from '../store/'
 import SignIn from "../components/login.vue"
 import SignUp from "../components/register.vue";
-import store from "../store"
 import Profile from '../components/profile.vue';
 
+const router=createRouter({
+    history:createWebHistory(import.meta.env.BASE_URL),
 
  
-const routes=[
+routes:[
     {
         path:'/',
         name:'Home',
@@ -32,6 +33,7 @@ const routes=[
         component:category,
         beforeEnter: (to, from, next) => {
             if (store.state.isLoggedIn === false) {
+                console.log(store.state.isLoggedIn)
                 next({path:'/SignIn',
                 query:{
                         redirecFrom: to.fullPath
@@ -66,9 +68,10 @@ const routes=[
     {
         path:'/cart',
         name:'cart',
-        component:cart,
+        component:() =>import('../components/cart.vue'),
         beforeEnter: (to, from, next) => {
             if (store.state.isLoggedIn === false) {
+                console.log(store.state.isLoggedIn)
                 next({path:'/SignIn',
                 query:{
                         redirecFrom: to.fullPath
@@ -94,13 +97,24 @@ const routes=[
         path:'/profile',
         name:'profile',
         component:Profile,
+        beforeEnter: (to, from, next) => {
+            if (store.state.isLoggedIn === false) {
+                console.log(store.state.isLoggedIn)
+                next({path:'/SignIn',
+                query:{
+                        redirecFrom: to.fullPath
+                }
+            })
+            }
+            else{
+                next()
+            }
+        }
     }
 ]
-
-
-const router=createRouter({
-    history:createWebHistory(import.meta.env.BASE_URL),
-    routes
 })
+
+
+
 
 export default router

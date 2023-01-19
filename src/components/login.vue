@@ -1,7 +1,7 @@
 <script>
 import axios from "axios";
-import store from "../store";
 import Swal from 'sweetalert2';
+import store from '../store';
 export default {
   mounted() {
     console.log("component mounted");
@@ -12,28 +12,15 @@ export default {
       password: "",
       response: "",
       errors: "",
+      success: "",
     };
-  },
-
-  beforeRouteEnter (to, from, next){
-    console.log(from.query.redirectFrom);
-    if (to.query.redirectFrom === "/dashboard"){
-      next(Swal.fire(
-          'Sorry!!!',
-          'You have to signIn first',
-          'warning'
-        ))
-    }
-    else{
-      next()
-    }
   },
 
   methods: {
     submitForm() {
       axios
         .post("http://localhost:8000/customer/login", {
-          email: this.email,
+          Email: this.email,
           password: this.password,
         })
         .then((response) => {
@@ -41,15 +28,15 @@ export default {
           const success = response.data.success;
           this.response = response;
           localStorage.setItem('accessToken',response.data.token);
-          store.dispatch("fetchAccessToken");
-          store.dispatch("setaccessToken");
+          store.dispatch('fetchAccessToken');
+          store.dispatch('setaccessToken');
           this.$router.push({ name: "category" });
 
         })
         .catch((errors) => {
           console.log(errors);
-          if (errors.response.data.errors) {
-            this.errors = errors.response.data.errors;
+          if (errors.response.data.message) {
+            this.errors = errors.response.data.message;
           }
         });
       this.email = "";
