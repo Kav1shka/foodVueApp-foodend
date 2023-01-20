@@ -60,5 +60,4 @@
 </template>
 
 <script setup>
-import { PaperClipIcon } from "@heroicons/vue/20/solid";
 </script>
