@@ -7,7 +7,8 @@ const store = createStore({
     signInVisited: false,
     CategoryVisited: false,
     CartVisited: false,
-    
+    cartList: [],
+    total: 0,
   },
 
   mutations: {
@@ -34,6 +35,23 @@ const store = createStore({
     CartVisited: (state) => {
       state.CartVisited = true;
     },
+    addFood: (state, payload) => {
+      state.cartList.push({
+        foodID: payload.id,
+        foodName: payload.name,
+        foodPrice: payload.price,
+        Amount: payload.amount,
+        image_URL: payload.url,
+      });
+      localStorage.setItem("cartList", JSON.stringify(state.cartList));
+      console.log(payload);
+    },
+    cartFetch: (state) => {
+      state.cartList = JSON.parse(localStorage.cartList);
+    },
+    getTotal: (state) =>{ 
+      //state.total = 
+    }
   },
 
   actions: {
@@ -61,6 +79,12 @@ const store = createStore({
     },
     CartVisited({ commit }) {
       commit("CartVisited");
+    },
+    addFood({ commit }, payload) {
+      commit("addFood", payload);
+    },
+    cartFetch({ commit }) {
+      commit("cartFetch");
     },
   },
 });
