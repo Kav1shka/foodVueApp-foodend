@@ -54,10 +54,9 @@
         </div>
       </dl>
     </div>
-    <hr/>
-    <br/>
+    <hr />
+    <br />
   </div>
 </template>
 
-<script setup>
-</script>
+<script setup></script>

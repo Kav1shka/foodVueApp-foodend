@@ -11,7 +11,7 @@ import store from '../store/'
 import SignIn from "../components/login.vue"
 import SignUp from "../components/register.vue";
 import Profile from '../components/profile.vue';
-
+import feedback from '../components/feedback.vue';
 const router=createRouter({
     history:createWebHistory(import.meta.env.BASE_URL),
 
@@ -21,6 +21,11 @@ routes:[
         path:'/',
         name:'Home',
         component:Home,
+    },
+     {
+        path:'/feedback',
+        name:'feedback',
+        component:feedback,
     },
     {
         path:'/team',

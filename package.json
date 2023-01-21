@@ -9,7 +9,7 @@
   "dependencies": {
     "@cloudinary/url-gen": "^1.8.7",
     "@cloudinary/vue": "^1.7.0",
-    "@headlessui/vue": "^1.7.3",
+    "@headlessui/vue": "^1.7.7",
     "@heroicons/vue": "^2.0.13",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@vueuse/core": "^9.9.0",
