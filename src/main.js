@@ -8,6 +8,7 @@ import store from "./store";
 store.dispatch('fetchAccessToken');
 store.dispatch('setaccessToken');
 store.dispatch('cartFetch');
+store.dispatch('userDataFetch');
 
  
 

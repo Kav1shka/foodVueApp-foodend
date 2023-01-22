@@ -1,39 +1,89 @@
 <template>
-<nav class="p-3 border-gray-200 rounded bg-gray-1000 dark:bg-gray-800 dark:border-gray-700">
-    <div class="container flex flex-wrap items-center justify-between mx-auto">
-      <a href="#" class="flex items-center">
-          <img src="https://www.kdu.ac.lk/wp-content/uploads/2016/03/logo_kdu-2.png" class="h-6 mr-3 sm:h-10" alt="KDU Logo" />
-          <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"> KDU Cafeteria</span>
+  <nav class="bg-gray-700 border-gray-200 dark:bg-gray-900">
+    <div
+      class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl px-4 md:px-6 py-2.5"
+    >
+  <router-link to="/">
+      <a href="" class="flex items-center">
+        <img
+          src="https://res.cloudinary.com/dbblvdonh/image/upload/v1674363289/project%20food%20app/Crest-KDU_rkmvxd.png"
+          class="h-10 mr-3 sm:h-9"
+          alt="KDU Logo"
+        />
+        <span
+          class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"
+          >KDU Cafeteria</span
+        >
       </a>
-      <button data-collapse-toggle="navbar-solid-bg" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-solid-bg" aria-expanded="false">
-        <span class="sr-only">Open main menu</span>
-        <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
-      </button>
-      <div class="hidden w-full md:block md:w-auto" id="navbar-solid-bg">
-        <ul class="flex flex-col mt-4 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700">
-          <li>
-            <Router-link to="/" class="drink py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Home
-          </Router-link>
+  </router-link>
+      <div class="flex items-center">
+        <a
+          href="tel:5541251234"
+          class="mr-6 text-sm font-medium text-gray-500 dark:text-white hover:underline"
+          >(555) 412-1234</a
+        >
+        <router-link to="/contact">
+        <a
+          href="#"
+          class="text-sm font-medium text-blue-700 dark:text-blue-500 hover:text-yellow-400"
+          >Contact</a
+        >
+        </router-link>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <div class="vl"></div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <router-link to="/profile">
+        <a
+          href="#"
+          class="text-sm font-medium text-blue-700 dark:text-blue-500 hover:text-yellow-400"
+          ><div
+            class="relative w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600"
+          >
+            <svg
+              class="absolute w-12 h-12 text-gray-400 -left-1"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                clip-rule="evenodd"
+              ></path>
+            </svg></div
+        ></a>
+      </router-link>
+      </div>
+    </div>
+  </nav>
+  <nav class="bg-gray-600 dark:bg-gray-700">
+    <div class="max-w-screen-xl px-4 py-3 mx-auto md:px-6">
+      <div class="flex items-center">
+        <ul class="flex flex-row mt-0 mr-6 space-x-8 text-sm font-medium">
+          <li><router-link to="/">
+            <a
+              href="#"
+              class="text-white dark:text-white hover:text-yellow-400"
+              aria-current="page"
+              >Home</a
+            >
+            </router-link>
           </li>
-          <li>
-            <Router-link to="/signIn" class="drink py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Sign In
-          </Router-link>
+          <li><router-link to="/category">
+            <a href="#" class="text-white dark:text-white hover:text-yellow-400"
+              >Category</a
+            >
+          </router-link>
           </li>
-          <li>
-            <Router-link to="/category" class="drink py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Category
-          </Router-link>
+          <li><router-link to="/cart">
+            <a href="#" class="text-white dark:text-white hover:text-yellow-400"
+              >Cart</a
+            >
+          </router-link>
           </li>
-          <li>
-            <Router-link to="/cart" class="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Cart
-            </Router-link>
-          </li>
-          <li>
-            <Router-link to="/team" class="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact
-            </Router-link>
-          </li>
-          <li>
-          <RouterLink to="/profile" class="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Profile
-          </RouterLink>
+          <li><router-link to="/SignIn">
+            <a href="#" class="text-white dark:text-white hover:text-yellow-400"
+              >Login</a
+            >
+          </router-link>
           </li>
         </ul>
       </div>
@@ -43,3 +93,9 @@
 <script>
 export default {};
 </script>
+<style>
+.vl {
+  border-left: 5px solid rgb(47, 44, 213);
+  height: 40px;
+}
+</style>

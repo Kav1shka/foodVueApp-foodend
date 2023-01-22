@@ -1,6 +1,5 @@
 <script>
 import store from "../store";
-
 export default {
   name: "CartItems",
   data() {
@@ -12,6 +11,9 @@ export default {
     listCreate() {
       this.cartItems = store.state.cartList;
       console.log("Cart List ", this.cartItems);
+    },
+    deleteItem() {
+      console.log("test button")
     },
   },
   mounted() {
@@ -53,7 +55,6 @@ export default {
               <div class="flex-shrink-0">
                 <img
                   :src="cartItem.image_URL"
-                  :alt="image"
                   class="h-24 w-24 rounded-md object-cover object-center sm:h-48 sm:w-48"
                 />
               </div>
@@ -80,6 +81,7 @@ export default {
                   <div class="mt-4 sm:mt-0 sm:pr-9">
                     <select
                       class="max-w-full rounded-md border border-gray-300 py-1.5 text-left text-base font-medium leading-5 text-gray-700 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"
+                      v-model="cartItem.Amount"
                     >
                       <option value="1">1</option>
                       <option value="2">2</option>
@@ -93,10 +95,10 @@ export default {
 
                     <div class="absolute top-0 right-0">
                       <button
+                        @clink="deleteItem()"
                         type="button"
-                        class="-m-2 inline-flex p-2 text-red-400 hover:text-red-900"
-                      >Remove
-                        <span class="sr-only">Remove</span>
+                        class="-m-2 p-2 text-red-400 hover:text-red-900"
+                      > <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
                       </button>
                     </div>
                   </div>
@@ -142,9 +144,7 @@ export default {
               class="flex items-center justify-between border-t border-gray-200 pt-4"
             >
               <dt class="text-base font-medium text-gray-900">Order total</dt>
-              <dd class="text-base font-medium text-gray-900">
-                LKR {{ sum }}
-              </dd>
+              <dd class="text-base font-medium text-gray-900">LKR {{ sum }}</dd>
             </div>
           </dl>
 
@@ -154,7 +154,7 @@ export default {
               class="w-full rounded-md border border-transparent bg-indigo-600 py-3 px-4 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
             >
               Checkout
-            </button>
+            </button> 
           </div>
         </section>
       </form>

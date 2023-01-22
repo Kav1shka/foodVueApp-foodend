@@ -115,6 +115,11 @@ routes:[
                 next()
             }
         }
+    },
+    {
+        path:'/contact',
+        name:'contact',
+        component:()=>import('../components/contact.vue')
     }
 ]
 })

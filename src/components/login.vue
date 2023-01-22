@@ -13,6 +13,7 @@ export default {
       response: "",
       errors: "",
       success: "",
+      userData : [],
     };
   },
 
@@ -28,6 +29,15 @@ export default {
           const success = response.data.success;
           this.response = response;
           localStorage.setItem('accessToken',response.data.token);
+          // const userPayload = {
+          //   name : response.data.details.Name,
+          //   email : response.data.details.Email,
+          //   id : response.data.details.KDU_ID,
+          //   number : response.data.details.Phone
+          // }
+          let userData = response.data.details;
+          console.log(this.userData);
+          store.dispatch('setUserData',userData);
           store.dispatch('fetchAccessToken');
           store.dispatch('setaccessToken');
           this.$router.push({ name: "category" });
@@ -51,9 +61,10 @@ export default {
       if(store.state.isLoggedIn === true){
         Swal.fire(
           'Already Loged in!',
-          'Go to Dashboard',
-          'success'
-        )
+          'Page BLOCKED',
+          'warning'
+        ),
+        this.$router.push({ name: "category" });
       }
     }
   },

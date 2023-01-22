@@ -9,12 +9,16 @@ const store = createStore({
     CartVisited: false,
     cartList: [],
     total: 0,
+    userDataList:[],
   },
 
   mutations: {
     logout: (state) => {
       state.accessToken = null;
       state.isLoggedIn = false;
+      localStorage.removeItem("accessToken");
+      localStorage.removeItem("userDataList");
+      localStorage.removeItem("cartList");
     },
     setaccessToken(state, accessToken) {
       if (state.accessToken != null) {
@@ -46,13 +50,27 @@ const store = createStore({
       localStorage.setItem("cartList", JSON.stringify(state.cartList));
       console.log(payload);
     },
-    cartFetch: (state) => {
+    cartFetch: (state,cartList) => {
+      if(localStorage.cartList){
       state.cartList = JSON.parse(localStorage.cartList);
+      }
+      else{
+        state.cartList = [];
+      }
     },
-    getTotal: (state) =>{ 
-      //state.total = 
-    }
+    setUserData:(state,userData)=>{
+      state.userDataList = userData;
+      localStorage.setItem("userDataList", JSON.stringify(state.userDataList));
+    },
+    userDataFetch: (state,userDataList) => {
+      if(localStorage.userDataList){
+      state.userDataList = JSON.parse(localStorage.userDataList);
+      }
+      else{
+        state.userDataList = [];
+      }
   },
+},
 
   actions: {
     fetchAccessToken({ commit }) {
@@ -86,6 +104,12 @@ const store = createStore({
     cartFetch({ commit }) {
       commit("cartFetch");
     },
+    setUserData({commit},userData){
+      commit("setUserData",userData);
+    },
+    userDataFetch({commit}){
+      commit("userDataFetch");
+    }
   },
 });
 
