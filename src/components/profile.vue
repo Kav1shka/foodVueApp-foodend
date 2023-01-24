@@ -54,6 +54,8 @@
             </dd>
           </div>
         </dl>
+        <br/>
+        <button @click="" class="btn btn-warning absolute bottom-5 left-5">Feedback</button>
         <button
         @click="Logout()"
          class="btn btn-error absolute bottom-5 right-5">Log out</button>

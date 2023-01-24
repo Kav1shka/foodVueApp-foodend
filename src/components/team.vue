@@ -20,7 +20,7 @@
       <div class="space-y-12 lg:grid lg:grid-cols-3 lg:gap-8 lg:space-y-0">
         <div class="space-y-5 sm:space-y-4">
           <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Our Team</h2>
-          <p class="text-xl text-gray-500">Nulla quam felis, enim faucibus proin velit, ornare id pretium. Augue ultrices sed arcu condimentum vestibulum suspendisse. Volutpat eu faucibus vivamus eget bibendum cras.</p>
+          <p class="text-xl text-gray-500">We're 3rd year undergraduate students of General Sir john kotalawela defense university. Welcome to the automated food ordering system</p>
         </div>
         <div class="lg:col-span-2">
           <ul role="list" class="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:gap-x-8">
@@ -67,47 +67,47 @@
 <script setup>
 const people = [
   {
-    name: 'Emma Dorsey',
-    role: 'Senior Front-end Developer',
+    name: 'KV Tharuka',
+    role: '',
     imageUrl:
-      'https://images.unsplash.com/photo-1505840717430-882ce147ef2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-    bio: 'Ultricies massa malesuada viverra cras lobortis. Tempor orci hac ligula dapibus mauris sit ut eu. Eget turpis urna maecenas cras. Nisl dictum.',
+      '',
+    bio: 'Reg No: 6230',
     twitterUrl: '#',
     linkedinUrl: '#',
   },
   {
-    name: 'Emma Dorsey',
-    role: 'Senior Front-end Developer',
+    name: 'SPMUKN De Alwis',
+    role: '',
     imageUrl:
-      'https://images.unsplash.com/photo-1505840717430-882ce147ef2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-    bio: 'Ultricies massa malesuada viverra cras lobortis. Tempor orci hac ligula dapibus mauris sit ut eu. Eget turpis urna maecenas cras. Nisl dictum.',
+      '',
+    bio: 'rEG nO: D/BCE/21/0010',
     twitterUrl: '#',
     linkedinUrl: '#',
   },
   {
-    name: 'Emma Dorsey',
-    role: 'Senior Front-end Developer',
+    name: 'HPMSS Shavindi',
+    role: '',
     imageUrl:
-      'https://images.unsplash.com/photo-1505840717430-882ce147ef2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-    bio: 'Ultricies massa malesuada viverra cras lobortis. Tempor orci hac ligula dapibus mauris sit ut eu. Eget turpis urna maecenas cras. Nisl dictum.',
+      '',
+    bio: 'Reg No: D/BSE/21/0013',
     twitterUrl: '#',
     linkedinUrl: '#',
   },
   {
-    name: 'Emma Dorsey',
-    role: 'Senior Front-end Developer',
+    name: 'KADSA Kuruppuarachchi',
+    role: '',
     imageUrl:
-      'https://images.unsplash.com/photo-1505840717430-882ce147ef2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-    bio: 'Ultricies massa malesuada viverra cras lobortis. Tempor orci hac ligula dapibus mauris sit ut eu. Eget turpis urna maecenas cras. Nisl dictum.',
+      '',
+    bio: 'Reg No: D/BCE/21/0012',
     twitterUrl: '#',
     linkedinUrl: '#',
   },
   {
-    name: 'Emma Dorsey',
-    role: 'Senior Front-end Developer',
+    name: 'IHL Ilukpitiya',
+    role: '',
     imageUrl:
-      'https://images.unsplash.com/photo-1505840717430-882ce147ef2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-    bio: 'Ultricies massa malesuada viverra cras lobortis. Tempor orci hac ligula dapibus mauris sit ut eu. Eget turpis urna maecenas cras. Nisl dictum.',
+      '',
+    bio: 'Reg No: D/BCS/21/0004',
     twitterUrl: '#',
     linkedinUrl: '#',
   },

@@ -75,7 +75,7 @@ export default {
 </script>
 
 <template>
-  <div className="hero min-h-screen" style="background-image: url('https://images.pexels.com/photos/326279/pexels-photo-326279.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')">
+  <div className="hero min-h-screen" style="background-image: url('https://res.cloudinary.com/dbblvdonh/image/upload/v1674444646/vintage-old-rustic-cutlery-dark_1220-4886_fmry9u.webp')">
     <div className="hero-overlay bg-opacity-50"></div>
     <div className="hero-content flex-col lg:flex-row-reverse">
       <div className="text-center lg:text-left">

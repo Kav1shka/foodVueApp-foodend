@@ -1,57 +1,50 @@
 <template>
-  <div class="bg-white">
-  <br/><hr class="border-4 border-blue-500 cursor-pointer hover:border-orange-500 duration-500">
-  <hr class="border-4 border-blue-500 cursor-pointer hover:border-orange-500 duration-500"> <br/>
-    <div class="carousel w-full h-full relative">
-      <div id="slide1" class="carousel-item relative w-full">
-        <img src="https://placeimg.com/800/200/arch" class="w-full" />
-        <div
-          class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2"
-        >
-          <a href="#slide4" class="btn btn-circle">❮</a>
-          <a href="#slide2" class="btn btn-circle">❯</a>
-        </div>
-      </div>
-      <div id="slide2" class="carousel-item relative w-full">
-        <img src="https://placeimg.com/800/200/arch" class="w-full" />
-        <div
-          class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2"
-        >
-          <a href="#slide1" class="btn btn-circle">❮</a>
-          <a href="#slide3" class="btn btn-circle">❯</a>
-        </div>
-      </div>
-      <div id="slide3" class="carousel-item relative w-full">
-        <img src="https://placeimg.com/800/200/arch" class="w-full" />
-        <div
-          class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2"
-        >
-          <a href="#slide2" class="btn btn-circle">❮</a>
-          <a href="#slide4" class="btn btn-circle">❯</a>
-        </div>
-      </div>
-      <div id="slide4" class="carousel-item relative w-full">
-        <img src="https://placeimg.com/800/200/arch" class="w-full" />
-        <div
-          class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2"
-        >
-          <a href="#slide3" class="btn btn-circle">❮</a>
-          <a href="#slide1" class="btn btn-circle">❯</a>
-        </div>
-      </div>
+    <div class="bg-white">
+  <section>
+  <br/>
+  <div class="inline-flex items-center justify-center w-full">
+    <hr class="w-full h-3 my-8 bg-blue-400 border-0 rounded dark:bg-gray-700">
+    <hr class="w-full h-3 my-8 bg-orange-400 border-0 rounded dark:bg-gray-700">
+    <div class="absolute px-4 -translate-x-1/2 bg-white left-1/2 dark:bg-gray-900">
+        <img src="https://res.cloudinary.com/dbblvdonh/image/upload/c_scale,w_100/v1674363289/project%20food%20app/Crest-KDU_rkmvxd.png">
     </div>
+</div>
+
+<br/><br/><br/><br/>
+  </section>
+  <div class="relative">
+          <div aria-hidden="true" class="absolute hidden h-full w-1/2 bg-gray-100 lg:block" />
+          <div class="relative bg-gray-100 lg:bg-transparent">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:grid lg:grid-cols-2 lg:px-8">
+              <div class="mx-auto max-w-2xl py-24 lg:max-w-none lg:py-64">
+                <div class="lg:pr-16">
+                  <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl xl:text-6xl">KDU Cafeteria</h1>
+                  <p class="mt-4 text-xl text-gray-600">We're here to serve only the best products for you.</p>
+                  <div class="mt-6">
+                  <button
+                  @click="goToHome()">
+                  
+                    <a href="#" class="inline-block rounded-md border border-transparent bg-indigo-600 py-3 px-8 font-medium text-white hover:bg-indigo-700">Get Start</a>
+                  </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="h-48 w-full sm:h-64 lg:absolute lg:top-0 lg:right-0 lg:h-full lg:w-1/2">
+            <img src="https://res.cloudinary.com/dbblvdonh/image/upload/v1674443813/z_T_C-p27-KDU_jjxiyi.jpg" alt="" class="h-full w-full object-cover object-center" />
+          </div>
+        </div> 
     <section class="text-gray-600 body-font">
       <div class="container px-5 py-24 mx-auto flex flex-wrap">
         <div class="flex w-full mb-20 flex-wrap">
           <h1
             class="sm:text-3xl text-2xl font-medium title-font text-gray-900 lg:w-1/3 lg:mb-0 mb-4"
           >
-            Master Cleanse Reliac Heirloom
+            Our facilities and Services
           </h1>
           <p class="lg:pl-6 lg:w-2/3 mx-auto leading-relaxed text-base">
-            Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical
-            gentrify, subwaym-to-table. Franzen you probably
-            haven't heard of them man bun deep jianbing selfies heirloom.
+            
           </p>
         </div>
         <div class="flex flex-wrap md:-m-2 -m-1">
@@ -60,21 +53,21 @@
               <img
                 alt="gallery"
                 class="w-full object-cover h-full object-center block"
-                src="https://dummyimage.com/500x300"
+                src="https://res.cloudinary.com/dbblvdonh/image/upload/v1674444373/6_gvhm9s.jpg"
               />
             </div>
             <div class="md:p-2 p-1 w-1/2">
               <img
                 alt="gallery"
                 class="w-full object-cover h-full object-center block"
-                src="https://dummyimage.com/501x301"
+                src="https://res.cloudinary.com/dbblvdonh/image/upload/v1674444224/banner2-scaled_yfnybp.jpg"
               />
             </div>
             <div class="md:p-2 p-1 w-full">
               <img
                 alt="gallery"
                 class="w-full h-full object-cover object-center block"
-                src="https://dummyimage.com/600x360"
+                src="https://res.cloudinary.com/dbblvdonh/image/upload/v1674443537/photo_2023-01-22_13-27-48_kq3psr.jpg"
               />
             </div>
           </div>
@@ -83,21 +76,21 @@
               <img
                 alt="gallery"
                 class="w-full h-full object-cover object-center block"
-                src="https://dummyimage.com/601x361"
+                src="https://res.cloudinary.com/dbblvdonh/image/upload/v1674443537/photo_2023-01-22_13-27-50_x5ivbq.jpg"
               />
             </div>
             <div class="md:p-2 p-1 w-1/2">
               <img
                 alt="gallery"
                 class="w-full object-cover h-full object-center block"
-                src="https://dummyimage.com/502x302"
+                src="https://res.cloudinary.com/dbblvdonh/image/upload/v1674443537/photo_2023-01-22_13-27-45_qwszcj.jpg"
               />
             </div>
             <div class="md:p-2 p-1 w-1/2">
               <img
                 alt="gallery"
                 class="w-full object-cover h-full object-center block"
-                src="https://dummyimage.com/503x303"
+                src="https://res.cloudinary.com/dbblvdonh/image/upload/v1674444054/WhatsApp_Image_2023-01-22_at_18.54.44_wanv5k.jpg"
               />
             </div>
           </div>
@@ -109,6 +102,16 @@
 
 <script>
 export default {
+  data(){
+    return{
+      currentSlide: 0,
+      slides: [
+        { img: 'https://res.cloudinary.com/dbblvdonh/image/upload/c_scale,h_450,w_970/v1674372395/project%20food%20app/132299162_100309565342733_8657912759306467146_n_mnnwk6.jpg' },
+        { img: 'https://res.cloudinary.com/dbblvdonh/image/upload/c_scale,h_450,w_970/v1674372395/project%20food%20app/132299162_100309565342733_8657912759306467146_n_mnnwk6.jpg' },
+        { img: 'https://example.com/image3.jpg' }
+      ]
+    }
+  },
   methods: {
     goToHome() {
       this.$router.push("/category");
@@ -116,7 +119,21 @@ export default {
     gotoFeedBack() {
       this.$router.push("/feedback");
     },
+    nextSlide() {
+      this.currentSlide = (this.currentSlide + 1) % this.slides.length
+    },
+    prevSlide() {
+      this.currentSlide = (this.currentSlide - 1 + this.slides.length) % this.slides.length
+    },
   },
+  mounted() {
+    this.interval = setInterval(() => {
+      this.nextSlide()
+    }, 5000)
+  },
+  beforeDestroy() {
+    clearInterval(this.interval)
+  }
 };
 </script>
 
