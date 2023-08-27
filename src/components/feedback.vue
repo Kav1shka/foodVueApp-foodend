@@ -65,16 +65,15 @@
             Leave us a feedback!
           </p>
           <p class="text-sm md:text-base leading-snug text-gray-500 text-opacity-100">
-                                Please provide your valuable feedback and something
-            something ...
+                                Please provide your valuable feedback...
           </p>
         </div>
-        <div class="flex flex-col w-full lg:w-2/3 justify-center">
+        <div class="flex flex-col w-full lg:w-2/3 justify-center ">
           <div class="container w-full px-4">
-            <div class="flex flex-wrap justify-center">
+            <div class="flex flex-wrap justify-center ">
               <div class="w-full lg:w-6/12 px-4">
                 <div
-                  class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-white"
+                  class=" bg-slate-300 relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg"
                 >
                   <div class="flex-auto p-5 lg:p-10">
                     <h4 class="text-2xl mb-4 text-black font-semibold">
@@ -88,11 +87,12 @@
                           >Topic</label
                         ><input
                           type="text"
-                          name="email"
-                          id="email"
+                          name="topic"
+                          id="topic"
                           class="border-0 px-3 py-3 rounded text-sm shadow w-full bg-gray-200 placeholder-gray-500 text-gray-800 outline-none focus:bg-gray-400"
                           placeholder="Specific the item or service"
                           style="transition: all 0.15s ease 0s"
+                          v-model="topic"
                           required
                         />
                       </div>
@@ -104,18 +104,20 @@
                         ><textarea
                           maxlength="300"
                           name="feedback"
-                          id="feedback"
+                          id="mfeedback"
                           rows="4"
                           cols="80"
                           class="border-0 px-3 py-3 bg-gray-200 placeholder-gray-500 text-gray-800 rounded text-sm shadow focus:outline-none w-full"
                           placeholder="Enter your message"
+                          v-model="mfeedback"
                           required
                         ></textarea>
                       </div>
                       <div class="text-center mt-6">
                         <button
+                        @click="submitComment()"
                           id="feedbackBtn"
-                          class="bg-yellow-300 text-black text-center mx-auto active:bg-yellow-400 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
+                          class="bg-orange-400 hover:bg-blue-400 text-black text-center mx-auto text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
                           type="submit"
                           style="transition: all 0.15s ease 0s"
                         >
@@ -142,7 +144,8 @@ export default {
   },
   data() {
     return {
-      fbMessage: "",
+      topic:"",
+      mfeedback: "",
     };
   },
 
@@ -150,7 +153,9 @@ export default {
     submitComment() {
       axios
         .post("http://localhost:8000/feedback/feedbackPost", {
-          fbMessage: this.fbMessage,
+          topic: this.topic,
+          mfeedback: this.mfeedback,
+
         })
         .then((response) => {
           console.log(response);
@@ -161,7 +166,8 @@ export default {
             this.errors = errors.response.data.errors;
           }
         });
-      this.fbMessage = "";
+      this.mfeedback = "";
+      this.topic ="";
     },
   },
 };

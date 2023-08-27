@@ -55,10 +55,10 @@
           </div>
         </dl>
         <br/>
-        <button @click="" class="btn btn-warning absolute bottom-5 left-5">Feedback</button>
+        <button @click="gotoFeedback()" class="btn btn-warning absolute bottom-5 left-5 bg-orange-400 hover:bg-blue-400">Feedback</button>
         <button
         @click="Logout()"
-         class="btn btn-error absolute bottom-5 right-5">Log out</button>
+         class="btn btn-error absolute bottom-5 right-5 bg-orange-400 hover:bg-blue-400">Log out</button>
       </div>
       <hr />
       <br />
@@ -84,6 +84,9 @@ export default {
     Logout(){
       store.dispatch("logout");
       this.$router.push('/SignIn');
+    },
+    gotoFeedback(){
+      this.$router.push('/feedback');
     },
   },
   mounted() {

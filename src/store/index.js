@@ -20,6 +20,10 @@ const store = createStore({
       localStorage.removeItem("userDataList");
       localStorage.removeItem("cartList");
     },
+    clearCart(state){
+      state.cartList = [];
+      localStorage.removeItem("cartList");
+    },
     setaccessToken(state, accessToken) {
       if (state.accessToken != null) {
         state.isLoggedIn = true;
@@ -49,6 +53,11 @@ const store = createStore({
       });
       localStorage.setItem("cartList", JSON.stringify(state.cartList));
       console.log(payload);
+    },
+    updateList:(state,updatedList)=>{
+      state.cartList = updatedList;
+      localStorage.setItem("cartList", JSON.stringify(state.cartList));
+      console.log("Final",state.cartList);
     },
     cartFetch: (state,cartList) => {
       if(localStorage.cartList){
@@ -84,7 +93,9 @@ const store = createStore({
     logout({ commit }) {
       commit("logout");
     },
-
+    clearCart({commit}){
+      commit("clearCart");
+    },
     CartVisited({ commit }) {
       commit("CartVisited");
     },
@@ -109,6 +120,10 @@ const store = createStore({
     },
     userDataFetch({commit}){
       commit("userDataFetch");
+    },
+    updateList({commit},updatedList){
+      commit("updateList",updatedList);
+      console.log("Action ",updatedList);
     }
   },
 });

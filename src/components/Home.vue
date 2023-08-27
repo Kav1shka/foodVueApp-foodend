@@ -3,9 +3,9 @@
   <section>
   <br/>
   <div class="inline-flex items-center justify-center w-full">
-    <hr class="w-full h-3 my-8 bg-blue-400 border-0 rounded dark:bg-gray-700">
-    <hr class="w-full h-3 my-8 bg-orange-400 border-0 rounded dark:bg-gray-700">
-    <div class="absolute px-4 -translate-x-1/2 bg-white left-1/2 dark:bg-gray-900">
+    <hr class="w-full h-3 my-8 bg-blue-400 border-0 rounded dark:bg-gray-700 animate-fade animate-duration-[1000ms] ">
+    <hr class="w-full h-3 my-8 bg-orange-400 border-0 rounded dark:bg-gray-700 animate-fade animate-duration-[1000ms]">
+    <div class="absolute px-4 -translate-x-1/2 bg-white left-1/2 dark:bg-gray-900 animate-fade animate-duration-[1000ms]">
         <img src="https://res.cloudinary.com/dbblvdonh/image/upload/c_scale,w_100/v1674363289/project%20food%20app/Crest-KDU_rkmvxd.png">
     </div>
 </div>
@@ -14,7 +14,7 @@
   </section>
   <div class="relative">
           <div aria-hidden="true" class="absolute hidden h-full w-1/2 bg-gray-100 lg:block" />
-          <div class="relative bg-gray-100 lg:bg-transparent">
+          <div class="relative bg-gray-100 lg:bg-transparent animate-fade-right animate-duration-[2000ms]">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:grid lg:grid-cols-2 lg:px-8">
               <div class="mx-auto max-w-2xl py-24 lg:max-w-none lg:py-64">
                 <div class="lg:pr-16">
@@ -24,14 +24,14 @@
                   <button
                   @click="goToHome()">
                   
-                    <a href="#" class="inline-block rounded-md border border-transparent bg-indigo-600 py-3 px-8 font-medium text-white hover:bg-indigo-700">Get Start</a>
+                    <a href="#" class="inline-block rounded-md border border-transparent bg-orange-400 py-3 px-8 font-medium text-white hover:bg-blue-400">Get Start</a>
                   </button>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="h-48 w-full sm:h-64 lg:absolute lg:top-0 lg:right-0 lg:h-full lg:w-1/2">
+          <div class="h-48 w-full sm:h-64 lg:absolute lg:top-0 lg:right-0 lg:h-full lg:w-1/2 animate-fade-left animate-duration-[2000ms]">
             <img src="https://res.cloudinary.com/dbblvdonh/image/upload/v1674443813/z_T_C-p27-KDU_jjxiyi.jpg" alt="" class="h-full w-full object-cover object-center" />
           </div>
         </div> 
@@ -47,12 +47,12 @@
             
           </p>
         </div>
-        <div class="flex flex-wrap md:-m-2 -m-1">
+        <div class="flex flex-wrap md:-m-2 -m-1 animate-fade-up animate-duration-[1000ms]">
           <div class="flex flex-wrap w-1/2">
             <div class="md:p-2 p-1 w-1/2">
               <img
                 alt="gallery"
-                class="w-full object-cover h-full object-center block"
+                class="w-full object-cover h-full object-center block delay-[300ms] duration-[600ms]"
                 src="https://res.cloudinary.com/dbblvdonh/image/upload/v1674444373/6_gvhm9s.jpg"
               />
             </div>

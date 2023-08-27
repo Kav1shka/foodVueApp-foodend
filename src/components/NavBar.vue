@@ -19,13 +19,13 @@
       <div class="flex items-center">
         <a
           href="tel:5541251234"
-          class="mr-6 text-sm font-medium text-gray-500 dark:text-white hover:underline"
+          class="mr-6 text-sm font-medium text-orange-400 dark:text-white hover:text-blue-400"
           >(555) 412-1234</a
         >
         <router-link to="/contact">
         <a
           href="#"
-          class="text-sm font-medium text-blue-700 dark:text-blue-500 hover:text-yellow-400"
+          class="text-sm font-medium text-blue-700 dark:text-blue-500 hover:text-orange-400"
           >Contact</a
         >
         </router-link>
@@ -33,7 +33,7 @@
       <router-link to="/profile">
         <a
           href="#"
-          class="text-sm font-medium text-blue-700 dark:text-blue-500 hover:text-yellow-400"
+          class="text-sm font-medium text-blue-700 dark:text-blue-500 hover:text-orange-400"
           ><div
             class="relative w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600"
           >
@@ -61,26 +61,26 @@
           <li><router-link to="/">
             <a
               href="#"
-              class="text-white dark:text-white hover:text-yellow-400"
+              class="text-white dark:text-white hover:text-orange-400"
               aria-current="page"
               >Home</a
             >
             </router-link>
           </li>
           <li><router-link to="/category">
-            <a href="#" class="text-white dark:text-white hover:text-yellow-400"
+            <a href="#" class="text-white dark:text-white hover:text-orange-400"
               >Category</a
             >
           </router-link>
           </li>
           <li><router-link to="/cart">
-            <a href="#" class="text-white dark:text-white hover:text-yellow-400"
+            <a href="#" class="text-white dark:text-white hover:text-orange-400"
               >Cart</a
             >
           </router-link>
           </li>
           <li><router-link to="/SignIn">
-            <a href="#" class="text-white dark:text-white hover:text-yellow-400"
+            <a href="#" class="text-white dark:text-white hover:text-orange-400"
               >Login</a
             >
           </router-link>

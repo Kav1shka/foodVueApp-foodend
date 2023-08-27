@@ -1,26 +1,213 @@
 <script>
 import store from "../store";
+import axios from "axios";
+import { toast } from "vue3-toastify";
+import "vue3-toastify/dist/index.css";
+var cardCVV;
 export default {
   name: "CartItems",
   data() {
     return {
       cartItems: [],
+      finalOrder: [],
+      foodList: [],
+      holderName: "",
+      cardNumber: "",
+      year: "",
+      month: "",
+      cvv: "",
+      cardType: "",
+      error: "",
+      cardCVV:"",
+      cardNum:"",
+      cardDate:"",
+      cardT:"",
     };
   },
   methods: {
+    openMenu() {
+      menu.classList.remove("w-0", "h-0", "opacity-0");
+      menu.classList.add("w-screen", "h-screen", "opacity-95");
+    },
+    closeMenu() {
+      menu.classList.remove("w-screen", "h-screen", "opacity-95");
+      menu.classList.add("w-0", "h-0", "opacity-0");
+    },
+
     listCreate() {
       this.cartItems = store.state.cartList;
       console.log("Cart List ", this.cartItems);
     },
     deleteItem() {
-      console.log("test button")
+      console.log("test button");
     },
-    show(){
-      console.log("Updated List : ",cartItems)
+    show() {
+      console.log("Updated List : ", cartItems);
+    },
+    updateAmount(id, amount) {
+      const updatedList = this.cartItems;
+      console.log(id, amount);
+      store.dispatch("updateList", updatedList);
+      console.log(this.cartItems);
+    },
+    cardvalidate() {
+      //CARD TYPE CHECK
+      this.error = "";
+      if (document.getElementById("visa").checked) {
+        this.cardType = document.getElementById("visa").value;
+        var cardT = "OK";
+      } else if (document.getElementById("master").checked) {
+        this.cardType = document.getElementById("master").value;
+        var cardT = "OK";
+      } else {
+        this.error = "You have not selected any card type!";
+      }
+      console.log(this.error, cardT);
+      //CARD DATE CHECK
+      var monthName = this.month;
+      const sanitizedMonthName = monthName.trim().toLowerCase();
+      var monthNumber;
+      switch (sanitizedMonthName) {
+        case "january":
+          monthNumber = 1;
+          break;
+        case "february":
+          monthNumber = 2;
+          break;
+        case "march":
+          monthNumber = 3;
+          break;
+        case "april":
+          monthNumber = 4;
+          break;
+        case "may":
+          monthNumber = 5;
+          break;
+        case "june":
+          monthNumber = 6;
+          break;
+        case "july":
+          monthNumber = 7;
+          break;
+        case "august":
+          monthNumber = 8;
+          break;
+        case "september":
+          monthNumber = 9;
+          break;
+        case "october":
+          monthNumber = 10;
+          break;
+        case "november":
+          monthNumber = 11;
+          break;
+        case "december":
+          monthNumber = 12;
+          break;
+        default:
+          monthNumber = null;
+      }
+      const months = [
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08",
+        "09",
+        "10",
+        "11",
+        "12",
+      ];
+      const d = new Date();
+      var name = months[d.getMonth()];
+      var nowYear = d.getFullYear();
+      if (nowYear < this.year) {
+        var cardDate = "OK";
+      } else if (nowYear == this.year && monthNumber > name) {
+        cardDate = "OK";
+      } else {
+        this.error = "Card is expired!";
+      }
+      console.log(this.error, cardDate);
+      // CARD NUMBBER CHECK
+
+      var cardNumberLegth = this.cardNumber.toString().length;
+      var defaultLength = 16;
+      console.log(cardNumberLegth);
+      if (
+        cardNumberLegth == defaultLength &&
+        this.cardNumber == 1111222233334444
+      ) {
+        var cardNum = "OK";
+      } else {
+        this.error = "Invalid Number!";
+      }
+      console.log(this.error, cardNum);
+
+      //CVV CHECK
+      var cvvLength = this.cvv.toString().length;
+      console.log(cvvLength);
+      var cvvdefault = 3;
+      if (cvvLength == cvvdefault && this.cvv == 321) {
+        cardCVV = "OK";
+      } else {
+        this.error = "Invalid CVV !";
+      }
+      console.log(this.error, cardCVV);
+
+      console.log(
+        this.error + monthNumber + this.year + name + " " + cardNumberLegth
+      );
+      if(this.error !== "")
+      toast.error(this.error, {
+          position: toast.POSITION.TOP_CENTER,
+        });
+      this.setOrder();
+    },
+    setOrder() {
+      if (this.error == "") {
+        this.createOrder();
+      } else {
+        toast.error("Payment failed !", {
+          position: toast.POSITION.TOP_CENTER,
+        });
+      }
+    },
+    createOrder() {
+      this.finalOrder = this.cartItems;
+      console.log(this.finalOrder);
+      axios
+        .post("http://localhost:8000/orderDetails/order/new", {
+          itemList: this.finalOrder,
+          CustomerName: store.state.userDataList.Name,
+          Email: store.state.userDataList.Email,
+          KDU_ID: store.state.userDataList.KDU_ID,
+          totalprice: this.sum,
+          isPaid: true,
+          paidAt: Date,
+          isPlaced: true,
+        })
+        .then((response) => {
+          console.log(response);
+          store.dispatch("clearCart");
+          this.cartItems = [];
+          if(response.request.status == 201){
+            toast.success("Order Placed Successfully!", {
+          position: toast.POSITION.TOP_CENTER,
+        });
+          }
+        })
+        .catch((errors) => {
+          console.log(errors);
+        });
     },
   },
   mounted() {
     this.listCreate();
+    var menu = document.getElementById("menu");
   },
   computed: {
     sum() {
@@ -33,6 +220,119 @@ export default {
 };
 </script>
 <template>
+  <!-- Implement the overlay menu -->
+  <div
+    id="menu"
+    :class="'fixed z-20 w-0 h-0 flex justify-center items-center bg-gray-900 opacity-0 duration-700'"
+  >
+    <a
+      href="javascript:void(0)"
+      class="fixed top-6 right-8 text-orange-400 hover:text-blue-400 text-7xl font-semibold duration-300"
+      @click="closeMenu()"
+      >&times;</a
+    >
+    <div class="flex align-left items-center min-h-auto">
+      <div class="z-40 h-auto w-auto bg-white p-5 rounded-lg">
+        <p class="text-xl font-semibold">Payment Details</p>
+        <form @submit.prevent="submitForm">
+          <h3>Select Card Type</h3>
+          <div class="grid grid-cols-2">
+            <div class="items-center">
+              <input type="radio" id="visa" name="cardType" value="VISA" />
+              <label for="visa"
+                ><img src="./images/visa.png" class="w-8 h-8"
+              /></label>
+            </div>
+            <div>
+              <input type="radio" id="master" name="cardType" value="MASTER" />
+              <label for="master"
+                ><img src="./images/master.png" class="w-12 h-12"
+              /></label>
+            </div>
+          </div>
+          <div class="input_text mt-6 relative">
+            <label for="holdername">Cardholder Name</label>
+            <input
+              type="text"
+              id="holdername"
+              class="h-12 pl-7 outline-none px-2 focus:border-blue-900 transition-all w-full border-b"
+              placeholder="John Row"
+              v-model="holderName"
+              required
+            />
+          </div>
+          <div class="input_text mt-8 relative">
+            <label for="cardnumber">Card Number</label>
+            <input
+              type="number"
+              id="cardnumber"
+              class="h-12 pl-7 outline-none px-2 focus:border-blue-900 transition-all w-full border-b"
+              placeholder="0000 0000 0000 0000"
+              data-slots="0"
+              data-accept="\d"
+              maxlength="16"
+              v-model="cardNumber"
+              required
+            />
+          </div>
+          <div class="mt-8 flex gap-5">
+            <div class="form-group" id="exdate">
+              <label for="exdate">Expiry Date</label>
+              <select name="month" id="month" v-model="month">
+                <option>January</option>
+                <option>February</option>
+                <option>March</option>
+                <option>April</option>
+                <option>May</option>
+                <option>June</option>
+                <option>July</option>
+                <option>August</option>
+                <option>September</option>
+                <option>October</option>
+                <option>November</option>
+                <option>December</option>
+              </select>
+              <select name="year" id="year" v-model="year">
+                <option>2023</option>
+                <option>2024</option>
+                <option>2025</option>
+                <option>2026</option>
+                <option>2027</option>
+                <option>2028</option>
+              </select>
+            </div>
+            <div class="input_text relative w-full">
+              <label for="cvv">CVV</label>
+              <input
+                id="cvv"
+                type="number"
+                class="h-12 pl-7 outline-none px-2 focus:border-blue-900 transition-all w-full border-b"
+                placeholder="000"
+                data-slots="0"
+                data-accept="\d"
+                maxlength="3"
+                v-model="cvv"
+                required
+              />
+            </div>
+          </div>
+          <p class="text-lg text-center mt-4 text-gray-600 font-semibold">
+            Payment amount: LKR {{ sum }}
+          </p>
+          <div class="flex justify-center mt-4">
+            <button
+              type="submit"
+              @click="cardvalidate()"
+              class="outline-none pay h-12 bg-orange-400 text-white mb-3 hover:bg-blue-400 rounded-lg w-1/2 cursor-pointer transition-all"
+            >
+              Pay
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
   <div class="bg-white">
     <div
       class="mx-auto max-w-2xl px-4 pt-16 pb-24 sm:px-6 lg:max-w-7xl lg:px-8"
@@ -41,7 +341,7 @@ export default {
         Shopping Cart
       </h1>
       <form
-        class="mt-12 lg:grid lg:grid-cols-12 lg:items-start lg:gap-x-12 xl:gap-x-16"
+        class="mt-12 lg:grid lg:grid-cols-12 lg:items-start lg:gap-x-12 xl:gap-x-16 animate-fade-up animate-duration-[1000ms]"
       >
         <section aria-labelledby="cart-heading" class="lg:col-span-7">
           <h2 id="cart-heading" class="sr-only">Items in your shopping cart</h2>
@@ -83,6 +383,7 @@ export default {
 
                   <div class="mt-4 sm:mt-0 sm:pr-9">
                     <select
+                      @change="updateAmount(cartItem.foodID, cartItem.Amount)"
                       class="max-w-full rounded-md border border-gray-300 py-1.5 text-left text-base font-medium leading-5 text-gray-700 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"
                       v-model="cartItem.Amount"
                     >
@@ -95,15 +396,6 @@ export default {
                       <option value="7">7</option>
                       <option value="8">8</option>
                     </select>
-
-                    <div class="absolute top-0 right-0">
-                      <button
-                        @clink="deleteItem()"
-                        type="button"
-                        class="-m-2 p-2 text-red-400 hover:text-red-900"
-                      > <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-                      </button>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -153,12 +445,12 @@ export default {
 
           <div class="mt-6">
             <button
-            @click="show()"
-              type="submit"
-              class="w-full rounded-md border border-transparent bg-indigo-600 py-3 px-4 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
+              @click="openMenu()"
+              type="button"
+              class="w-full rounded-md border border-transparent bg-orange-400 py-3 px-4 text-base font-medium text-white shadow-sm hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
             >
               Checkout
-            </button> 
+            </button>
           </div>
         </section>
       </form>

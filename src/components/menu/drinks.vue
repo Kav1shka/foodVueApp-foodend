@@ -22,7 +22,7 @@
       </h2>
 
       <div
-        class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8"
+        class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 animate-fade-down animate-duration-[1000ms]"
       >
         <div
           v-for="product in products"
@@ -55,7 +55,7 @@
               <button
               @click="addtocart(product._id,product.name,product.cost,product.image_URL)"
                 type="button"
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                class="text-white bg-orange-400 hover:bg-blue-400 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >
                 <svg
                   aria-hidden="true"
@@ -80,6 +80,8 @@
 <script>
 import axios from "axios";
 import store from '../../store';
+import { toast } from "vue3-toastify";
+import "vue3-toastify/dist/index.css"; 
 
 export default {
   name: "Products",
@@ -103,6 +105,9 @@ export default {
         });
     },
     addtocart(id,name,price,url) {
+      toast.info("Cart updated!", {
+          position: toast.POSITION.TOP_CENTER,
+        });
       const payload = {
         id : id,
         name: name,

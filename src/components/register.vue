@@ -37,8 +37,8 @@ export default {
         })
         .catch((errors) => {
           console.log(errors);
-          if (errors.response.data.errors) {
-            this.errors = errors.response.data.errors;
+          if (errors.response.data.message) {
+            this.errors = errors.response.data.message;
           }
         });
       this.Name = "";
